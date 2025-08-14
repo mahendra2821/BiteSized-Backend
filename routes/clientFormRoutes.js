@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-// const {
-//   addClient,
-//   getClients,
-// } = require("../controllers/clientsFormController");
+const {
+  addClient,
+  getClients,
+} = require("../controllers/clientFormController");
 
 
-const { addClient, getClients } = require("../controllers/clientFormController");
 router.post("/", addClient);
 router.get("/", getClients);
 

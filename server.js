@@ -14,7 +14,9 @@ const generalWellnessRoutes = require("./routes/generalWellnessRoutes");
 const hyperTensionRoutes = require("./routes/hyperTensionRoutes");  
 const pcosRoutes = require("./routes/pcosRoutes");
 const HeartDiseaseRoutes = require("./routes/heartDiseaseRoutes");  
-
+// const plansRoutes = require("./routes/plans");
+// const paymentRoutes = require("./routes/paymentRoutes");
+// const registerRoutes = require("./routes/registerRoutes");
 const registrationRoutes = require("./routes/registrationRoutes");
 const emailRoutes = require("./routes/emailRoutes");
 
@@ -26,8 +28,14 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:5173", // local development frontend
+        "https://bitesized-pu.netlify.app" // ✅ deployed frontend URL
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/clients", clientRoutes);

@@ -31,7 +31,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173", // local development frontend
-        "https://bitesized-nutrion.netlify.app/" // ✅ deployed frontend URL
+        "https://bitesized-nutrion.netlify.app" // ✅ deployed frontend URL
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
